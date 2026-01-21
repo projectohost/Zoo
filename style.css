@@ -1,3 +1,120 @@
-.up{background-color: black;}
-.medium{backround-image: url(//ua-migrant.pl/wp-content/uploads/2023/11/0-zoo-5.webp )}
-.doun{}
+*{
+    margin: 0;
+}
+.start-section {
+  position: relative; /* для ::before */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  
+  /* Фонове зображення */
+  background: url('https://images.unsplash.com/photo-1503919005314-30d93d07d823?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+  overflow: hidden;
+}
+
+/* Градієнт як накладка */
+.start-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Градієнт зверху вниз: оранжевий → темний відтінок */
+  background: linear-gradient(to bottom, rgba(255, 193, 77, 0.3), rgba(51,51,51,0.7));
+  
+  /* Анімація фейду */
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  z-index: 1; /* щоб текст був зверху */
+}
+
+/* Анімація фейду */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Навігація */
+.navigation {
+  position: relative; /* щоб був над ::before */
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  align-self: flex-start;
+
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #ffd580;
+}
+/* Header */
+header {
+    position: relative;
+    z-index: 2; /* поверх градієнта */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+
+    margin-top: 100px;
+}
+
+/* Абзац */
+header p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* Заголовок */
+header h1 {
+    font-size: 52px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+/* CTA кнопка */
+.cta-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, #ffa500, #ff7f00);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Hover ефект кнопки */
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    background: linear-gradient(45deg, #ffb733, #ff8c00);
+}
