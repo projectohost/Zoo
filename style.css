@@ -65,11 +65,11 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
-  margin-bottom: 50px;
-  align-self: flex-start;
+  /* margin-bottom: 50px;
+  align-self: flex-start; */
 
   padding-bottom: 15px;
-  border-bottom: 2px solid rgb(255, 255, 255);
+  
 }
 
 .nav-block a {
@@ -138,9 +138,12 @@ header h1 {
 }
 
 .navigation {
+  border-bottom: 2px solid rgb(255, 255, 255);
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  padding: 0 30vw;
+  font-size:30px ;
 }
 
 .deers {
@@ -176,7 +179,7 @@ footer::before {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: blur(0wwwwwwwwwwwwwwwwwwwwwpx);
+  filter: blur(0);
   z-index: 0;
 }
 
